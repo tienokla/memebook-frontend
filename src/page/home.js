@@ -11,10 +11,18 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
         color: theme.palette.text.secondary,
     },
-    test: {
+    header: {
         position: 'sticky',
         height: '100%',
         top: '0',
+    },
+    side: {
+        position: 'sticky',
+        height: '100%',
+        top: '64px',
+    },
+    background:{
+        backgroundColor:'#8B939C'
     }
 }));
 
@@ -23,25 +31,25 @@ const array = new Array(100).fill(1)
 function Home() {
     const classes = useStyles();
     return (
-        <div >
+        <div className={classes.background}>
             <Grid
                 spacing={0}
                 container
             > 
-                <Grid item xs={12} className={classes.test}>
+                <Grid item xs={12} className={classes.header}>
                     <Header />
                 </Grid>
-                <Grid item xs={3} className={classes.test}>
+                <Grid item xs={2} className={classes.side}>
                     <Navigation/>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={8}>
                     <div>
                         <ul>
                             {array.map((item, index) => <li>index</li>)}
                         </ul>
                     </div>
                 </Grid>
-                <Grid item xs={3} className={classes.test}>
+                <Grid item xs={2} className={classes.side}>
                     <div>adwdada</div>
                 </Grid>
             </Grid>
